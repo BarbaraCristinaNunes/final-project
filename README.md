@@ -1,6 +1,6 @@
 # final-project
 
-During BeCode training I had to reate a big project in which I would practice everything that I have leanded since I started the course. In this project I diceided to apply my new skills and knowledge to resolve I problem with which I had to deal such as a biologist in searches laboratories.
+During BeCode training I had to create a big project in which I would practice everything that I have leanded since I started the course. In this project I diceided to apply my new skills and knowledge to resolve I problem with which I had to deal such as a biologist in searches laboratories.
 
 ## Contextualizing the problem
 
