@@ -14,7 +14,7 @@ Although there is data from each project with students and, in vegetable samples
 
 You can read about exsiccates [definition](https://www.etymonline.com/word/exsiccate) and [proccess](https://en.wikipedia.org/wiki/Desiccation);</b></i>
 
-![Exsiccate example](/img/herbarium.jpg)
+![Exsiccate example](/img/herbarium1.jpg)
 
 [SiBBr](https://ala-hub.sibbr.gov.br/ala-hub/#tab_simpleSearch) is an example of public library from Brazil
 
