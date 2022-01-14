@@ -2,6 +2,7 @@
 
 During BeCode training I had to create a big project in which I would practice everything that I have leanded since I started the course. In this project I diceided to apply my new skills and knowledge to resolve I problem with which I had to deal such as a biologist in searches laboratories.
 
+---
 ## Contextualizing the problem
 
 Such as a biologist I worked in laboratories related to ecology and biodiversity studies. During the searches I had to collect samples such as plants, insects, soil and fungi, and to keep these samples in our laboratory, but I had more experience in searches related to ecology vegetal and plants in general.
@@ -23,3 +24,17 @@ You can read about exsiccates [definition](https://www.etymonline.com/word/exsic
 [GBIF](https://www.gbif.org/) is an international library example.
 
 ![GBIF page](/img/GBIF.jpg)
+
+----
+
+## Project proposal
+
+My proposal to resolve laboratories' managed data problem and to offer better organization, security and quality of biological data is to build an application where the professor in charge of the laboratory can create an account as administrator and store, read, delete and update  these data with a pre-established pattern. He can do it manually adding line by line or sending a table that contains the data.
+ 
+The teacher also can create a public account. This public account is associated with the administer account and only his students or contributors can read the data. The user can not create, delete or update any data, it is an option only to read data. So this public account allows the students and the contributors access the data and get what they need to their searches without compromising data integrity.
+
+## Project challenges
+
+1. Deal with biological data is not so simple because they are generated from different projects, with varied goals. So the searchers don't apply the same methods to answer their hypothesis and obtain unique data types for a specific application. Therefore I decided not to approach ecological data and to focus in a biodiversity library.
+
+2. 
