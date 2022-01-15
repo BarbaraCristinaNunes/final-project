@@ -121,16 +121,16 @@ In collect_event table we do the link with all tables we have through id_specie 
 
 * id_subproject => <b>It can not be empty!</b>
 
-* id_collection => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field is not mandatory</b> because a laboratory also can not have a phisical collection.
+* id_collection => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field can be empty</b> because a laboratory also can not have a phisical collection.
 
-* id_field => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This field is not mandatory</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
+* id_field => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This field can be empty</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
 
-* collector_name => Who collected this sampple. <b>It is mandatory</b>
+* collector_name => Who collected this sampple. <b>It can not be empty</b>
 
-* taxonomist_name => Who identified this sample. <b>It is mandatory</b>
+* taxonomist_name => Who identified this sample. <b>It can not be empty</b>
 
-* data_colect => When this sample was collected. <b>It is mandatory</b>
+* data_colect => When this sample was collected. <b>It can not be empty</b>
 
-* extra_informmation => The user can write what he think it is important about this collect. <b>It is not mandatory</b>
+* extra_informmation => The user can write what he think it is important about this collect. <b>It can be empty</b>
 
-* image => exsiccates images. <b>It is not mandatory</b>
+* image => exsiccates images. <b>It can be empty</b>
