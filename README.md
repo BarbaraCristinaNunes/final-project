@@ -108,7 +108,7 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 In collect_event table we do the link with all tables we have through id_specie (SPECIES table), id_local (LOCATION table), id_project (PROJECT table) and id_subproject (SUBPROJECT table).
 
 | id | id_specie |id_local |id_project|id_subproject|id_collection|id_field|collector_name|taxonomist_name|data_colect|extra_informmation|image|
-| -- |--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| -- |--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
 | 1  | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
 
 #### <b>Columns</b>
