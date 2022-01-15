@@ -35,6 +35,12 @@ The teacher also can create a public account. This public account is associated 
 
 ## Project challenges
 
-1. Deal with biological data is not so simple because they are generated from different projects, with varied goals. So the searchers don't apply the same methods to answer their hypothesis and obtain unique data types for a specific application. Therefore I decided not to approach ecological data and to focus in a biodiversity library.
+### 1. Data
+* Deal with biological data is not so simple because they are generated from different projects, with varied goals. So the searchers don't apply the same methods to answer their hypothesis and obtain unique data types for a specific application. Therefore I decided not to approach ecological data and to focus in a biodiversity library.
 
-2. 
+### 2. Time and project scale
+* I have a short time to do my project (2 months) and to build a library to keep biodiversity data and to reduce the chances that the user inserts data with spelling mistakes in information about kingdom, phylum, class, order and family demand a data collection effort that is not feasible in 2 months. Therefore I decided to scale down the project and create a MVC to work with botanic data.
+
+The following image exemplifies biological classification which I mentioned above.
+
+![biological classification](/img/biological_classification.png)
