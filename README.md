@@ -29,7 +29,7 @@ You can read about exsiccates [definition](https://www.etymonline.com/word/exsic
 
 ## Project proposal
 
-My proposal to resolve laboratories' managed data problem and to offer better organization, security and quality of biological data is to build an application where the professor in charge of the laboratory can create an account as administrator and store, read, delete and update  these data with a pre-established pattern. He can do it manually adding line by line or sending a table that contains the data.
+My proposal to resolve laboratories' managed data problem and to offer better organization, security and quality of biological data is to build an application where the theacher in charge of the laboratory can create an account as administrator and store, read, delete and update  these data with a pre-established pattern. He can do it manually adding line by line or sending a table that contains the data.
  
 The teacher also can create a public account. This public account is associated with the administer account and only his students or contributors can read the data. The user can not create, delete or update any data, it is an option only to read data. So this public account allows the students and the contributors access the data and get what they need to their searches without compromising data integrity.
 
