@@ -148,3 +148,5 @@ In collect_event table we do the link with all tables we have through species_id
 | 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |boolean    |boolean|
 
 <b>No columns can be empty.</b>
+
+![PBC Diagram](/img/pbc_diagram.jpg)
