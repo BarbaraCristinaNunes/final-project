@@ -16,3 +16,33 @@ When I created Constants.php it was not a class. So I was having problem to run 
     Symfony\Component\ErrorHandler\DebugClassLoader::checkClass(): Argument #1 ($class) must be of type string, array given, called in C:\******\******\*****\******\******\final-project\pivity_botanical_collection\vendor\symfony\error-handler\DebugClassLoader.php on line 298
 
 To resolve this I trasnformed Constants.php in a class and my arrays in public variables.
+
+## To run this project 
+
+### Installing Doctrine
+
+        composer require symfony/orm-pack
+        composer require --dev symfony/maker-bundle
+
+[Reference](https://symfony.com/doc/current/doctrine.html)
+
+### Configuring the Database
+
+The database connection information is stored as an environment variable called DATABASE_URL. For development, you can find and customize this inside .env:
+
+    # .env (or override DATABASE_URL in .env.local to avoid committing your changes)
+
+    # customize this line!
+    DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=VERSION"
+
+    # to use mariadb:
+    DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=mariadb-VERSION"
+
+    # to use sqlite:
+    # DATABASE_URL="sqlite:///%kernel.project_dir%/var/app.db"
+
+    # to use postgresql:
+    # DATABASE_URL="postgresql://db_user:db_password@127.0.0.1:5432/db_name?serverVersion=11&charset=utf8"
+
+    # to use oracle:
+    # DATABASE_URL="oci8://db_user:db_password@127.0.0.1:1521/db_name"
