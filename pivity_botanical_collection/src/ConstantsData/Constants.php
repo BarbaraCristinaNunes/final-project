@@ -2,15 +2,15 @@
 
 class Constants 
 {
-    public $phylum = ['Tracheophyta'];
+    public const  PHYLUM = ['Tracheophyta'];
 
-    public $class = ['Magnoliopsida'];
+    public const CLASSES = ['Magnoliopsida'];
     
-    public $order = ['Caryophyllales'];
+    public const ORDER = ['Caryophyllales'];
     
-    public $family = ['Cactaceae'];
+    public const FAMILY = ['Cactaceae'];
     
-    public $genus = ['Acanthocalycium',
+    public const GENUS = ['Acanthocalycium',
         'Acanthocereus',
         'Acharagma',
         'Airampoa',
@@ -228,7 +228,7 @@ class Constants
         'Zygocactus',
     ];
     
-    public $scientificName = [
+    public const SCIENTFICNAME = [
         'Acanthocalycium ferrarii', 
         'Acanthocalycium klimpelianum', 
         'Acanthocalycium leucanthum', 
