@@ -46,3 +46,24 @@ The database connection information is stored as an environment variable called 
 
     # to use oracle:
     # DATABASE_URL="oci8://db_user:db_password@127.0.0.1:1521/db_name"
+
+[Reference](https://symfony.com/doc/current/doctrine.html)
+### Start Database
+
+Create a schema
+
+        php bin/console doctrine:database:create
+
+Create an object and new table
+
+        php bin/console make:entity
+
+Then
+
+        php bin/console make:migration
+
+Then 
+
+        php bin/console doctrine:migrations:migrate
+
+[Reference](https://symfony.com/doc/current/doctrine.html)
