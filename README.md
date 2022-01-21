@@ -67,7 +67,7 @@ There are a lot of projects in laboratories and it is very interesting to relate
 
 | id        | name          | coordinator  | funding institution |
 | --------- |:-------------:| ------------:| -------------------:|
-|      1    | Biodversit    | BN           | IUCN                |
+|      1    | Biodversity   | BN           | IUCN                |
 
 ### <b>2. SUBPROJECT table</b>
 
