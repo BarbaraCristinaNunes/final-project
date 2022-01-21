@@ -39,7 +39,7 @@ The teacher also can create a public account. This public account is associated 
 * Deal with biological data is not so simple because they are generated from different projects, with varied goals. So the searchers don't apply the same methods to answer their hypothesis and obtain unique data types for a specific application. Therefore I decided not to approach ecological data and to focus in a biodiversity library.
 
 ### 2. Time and project scale
-* I have a short time to do my project (2 months) and to build a library to keep biodiversity data and to reduce the chances that the user inserts data with spelling mistakes in information about biological classification demand a data collection effort that is not feasible in 2 months. Therefore I decided to scale down the project and create a MVC to work with botanic data about [Angiosperms](https://www.britannica.com/plant/angiosperm/General-features).
+* I have a short time to do my project (2 months) and to build a library to keep biodiversity data and to reduce the chances that the user inserts data with spelling mistakes in information about biological classification demand a data collection effort that is not feasible in 2 months. Therefore I decided to scale down the project and create a MVC to work with botanic data about [Cactaceae](https://www.britannica.com/topic/list-of-plants-in-the-family-Cactaceae-2041552).
 
 The following image exemplifies [biological classification]() which I mentioned above.
 
@@ -54,6 +54,8 @@ There will be three tables in database.
 * SPECIES;
 * LOCATION;
 * COLLECT_EVENT;
+* USER_ADM;
+* USER_NORMAL;
 
 ### <b>1. PROJECT table</b>
 
@@ -134,3 +136,14 @@ In collect_event table we do the link with all tables we have through id_specie 
 * extra_informmation => The user can write what he think it is important about this collect. <b>It can be empty</b>
 
 * image => exsiccates images. <b>It can be empty</b>
+
+### <b>6. USER_ADM table</b>
+
+| id | instituition                        | laboratory      | username     |email     |password   |
+| -- |------------------------------------:|---------------: |-------------:|---------:|----------:|
+| 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |
+### <b>7. USER_NORMAL</b>
+
+| id | adm_id |email     |password   |
+| -- |-------:|---------:|----------:|
+| 1  | 1      |a@a.a     |******     |
