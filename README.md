@@ -143,7 +143,7 @@ In collect_event table we do the link with all tables we have through species_id
 
 ### <b>6. USER</b>
 
-| id | instituition                        | laboratory      | username     |email     |password   |adm        |onlyne |
+| id | instituition                        | laboratory      | username     |email     |password   |adm        |online |
 | -- |------------------------------------:|---------------: |-------------:|---------:|----------:|----------:|------:|
 | 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |boolean    |boolean|
 
