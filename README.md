@@ -104,6 +104,7 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 | -- |--------:|--------:|-------------: |-------------:|---------:|----------:|
 | 1  | 1       | brazil  | minas gerais  |serra do cipo |-19.28    |-43.60     |
 
+Columns latitude_s and longitude_w are type decimal, precision 10 and scale 0.
 ### <b>5. SAMPLE table</b>
 
 In collect_event table we do the link with all tables we have through species_id (SPECIES table), location_id (LOCATION table), project_id (PROJECT table) and subproject_id (SUBPROJECT table).
