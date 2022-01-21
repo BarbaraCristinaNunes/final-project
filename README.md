@@ -122,9 +122,9 @@ In collect_event table we do the link with all tables we have through species_id
 
 * subproject_id => <b>It can be empty!</b>
 
-* collection_id => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field can be empty</b> because a laboratory also can not have a phisical collection.
+* collection_id => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This column can be empty</b> because a laboratory also can not have a phisical collection.
 
-* field_id => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This field can be empty</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
+* field_id => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This column can be empty</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
 
 * collector_name => Who collected this sampple. <b>It can not be empty</b>
 
@@ -141,3 +141,5 @@ In collect_event table we do the link with all tables we have through species_id
 | id | instituition                        | laboratory      | username     |email     |password   |adm        |onlyne |
 | -- |------------------------------------:|---------------: |-------------:|---------:|----------:|----------:|------:|
 | 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |boolean    |boolean|
+
+<b>No columns can be empty.</b>
