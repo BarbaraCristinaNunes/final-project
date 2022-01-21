@@ -67,3 +67,13 @@ Then
         php bin/console doctrine:migrations:migrate
 
 [Reference](https://symfony.com/doc/current/doctrine.html)
+
+## <b>Notes</b>
+
+* 21/01/2022
+
+You can find database structure [here](https://github.com/BarbaraCristinaNunes/final-project).
+
+In columns order_plant from table species I tried to user the word <b>order</b>, but I had the following error:
+
+        [ERROR] Name "order" is a reserved word
