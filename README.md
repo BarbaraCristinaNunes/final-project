@@ -53,9 +53,8 @@ There will be three tables in database.
 * SUBPROJECT;
 * SPECIES;
 * LOCATION;
-* COLLECT_EVENT;
-* USER_ADM;
-* USER_NORMAL;
+* SAMPLE;
+* USER;
 
 ### <b>1. PROJECT table</b>
 
@@ -101,31 +100,31 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
     Information from all columns are mandatories.
 
-| id | country | locality      | municipality |latitude_s|longitude_w|
-| -- |--------:|-------------: |-------------:|---------:|----------:|
-| 1  | brazil  | minas gerais  |serra do cipo |-19.28    |-43.60     |
+| id | user_id | country | locality      | municipality |latitude_s|longitude_w|
+| -- |--------:|--------:|-------------: |-------------:|---------:|----------:|
+| 1  | 1       | brazil  | minas gerais  |serra do cipo |-19.28    |-43.60     |
 
-### <b>5. COLLECT_EVENT table</b>
+### <b>5. SAMPLE table</b>
 
 In collect_event table we do the link with all tables we have through id_specie (SPECIES table), id_local (LOCATION table), id_project (PROJECT table) and id_subproject (SUBPROJECT table).
 
-| id | id_specie |id_local |id_project|id_subproject|id_collection|id_field|collector_name|taxonomist_name|data_colect|extra_informmation|image|
-| -- |--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
-| 1  | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
+| id | user_id |specie_id |location_id |project_id|subproject_id|collection_id|field_id|collector_name|taxonomist_name|data_colect|extra_informmation|image|
+| -- |--:|--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
+| 1  | 1 | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
 
-#### <b>Columns</b>
+#### <b>Columns description</b>
 
-* id_specie => <b>It can not be empty!</b>
+* specie_id => <b>It can not be empty!</b>
 
-* id_local => <b>It can not be empty!</b>
+* location_id => <b>It can not be empty!</b>
 
-* id_project => <b>It can not be empty!</b>
+* project_id => <b>It can not be empty!</b>
 
-* id_subproject => <b>It can not be empty!</b>
+* subproject_id => <b>It can not be empty!</b>
 
-* id_collection => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field can be empty</b> because a laboratory also can not have a phisical collection.
+* collection_id => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field can be empty</b> because a laboratory also can not have a phisical collection.
 
-* id_field => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This field can be empty</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
+* field_id => During field work seraches give id to plants where they are work, so they can identify them and work with these plants over time. So we created this column to receive this data. <b>This field can be empty</b> because sometime it doesn't applicable to plants in phisical collection because they can't have this information.
 
 * collector_name => Who collected this sampple. <b>It can not be empty</b>
 
@@ -137,13 +136,8 @@ In collect_event table we do the link with all tables we have through id_specie 
 
 * image => exsiccates images. <b>It can be empty</b>
 
-### <b>6. USER_ADM table</b>
+### <b>6. USER</b>
 
-| id | instituition                        | laboratory      | username     |email     |password   |
-| -- |------------------------------------:|---------------: |-------------:|---------:|----------:|
-| 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |
-### <b>7. USER_NORMAL</b>
-
-| id | adm_id |email     |password   |
-| -- |-------:|---------:|----------:|
-| 1  | 1      |a@a.a     |******     |
+| id | instituition                        | laboratory      | username     |email     |password   |adm        |
+| -- |------------------------------------:|---------------: |-------------:|---------:|----------:|----------:|
+| 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |boolean    |
