@@ -60,7 +60,8 @@ There will be three tables in database.
 
 There are a lot of projects in laboratories and it is very interesting to relate data to the projects for which it is collected. So we can have more control over which information we should send to each funding institution or to which institution we should thank when we publish these datas.
 
-    Project will be worked on such as an object. Each collect event must to have a project and different collect events can have the same project.
+    Project will be worked on such as an object. Each collect event must to have a project and different
+    collect events can have the same project.
 
     No columns can be empty.
 
@@ -73,7 +74,8 @@ There are a lot of projects in laboratories and it is very interesting to relate
 
 The projects are usually divided in subprojects. Each subproject deals with specific goals and different information, so it is interesting to relate data to the subprojects for which it is collected.
 
-    Subproject will be worked on such as an object. Each collect event can have or not a subproject (it is not mandatory) and different collect events can have the same project.
+    Subproject will be worked on such as an object. Each collect event can have or not a subproject
+    (it is not mandatory) and different collect events can have the same project.
 
     No columns can be empty
 
@@ -84,7 +86,8 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
 ### <b>3. SPECIES table</b>
 
-    Plant specie will be worked on such as an object. Each collect event must to be a plant specie and different collect events can have the same plant specie.
+    Plant specie will be worked on such as an object. Each collect event must to be a plant specie and
+    different collect events can have the same plant specie.
 
     No columns can be empty
 
@@ -96,7 +99,8 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
 ### <b>4. LOCATION table</b>
 
-    Location will be worked on such as an object. Each sample must to have a location and different samples can have the same location.
+    Location will be worked on such as an object. Each sample must to have a location and different
+    samples can have the same location.
 
     No columns can be empty
 
