@@ -120,7 +120,7 @@ In collect_event table we do the link with all tables we have through species_id
 
 * project_id => <b>It can not be empty!</b>
 
-* subproject_id => <b>It can not be empty!</b>
+* subproject_id => <b>It can be empty!</b>
 
 * collection_id => We are considering that the laboratory already has a collection. So the teacher should be able to link phisical collection with virtual collection. <b>This field can be empty</b> because a laboratory also can not have a phisical collection.
 
