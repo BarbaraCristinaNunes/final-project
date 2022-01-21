@@ -62,7 +62,7 @@ There are a lot of projects in laboratories and it is very interesting to relate
 
     Project will be worked on such as an object. Each collect event must to have a project and different collect events can have the same project.
 
-    Information from all columns are mandatories.
+    No columns can be empty.
 
 
 | id        | name          | coordinator  | funding institution |
@@ -75,7 +75,7 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
     Subproject will be worked on such as an object. Each collect event can have or not a subproject (it is not mandatory) and different collect events can have the same project.
 
-    Information from all columns are mandatories.
+    No columns can be empty
 
 
 | id        | project_id|name                      |
@@ -86,19 +86,19 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
     Plant specie will be worked on such as an object. Each collect event must to be a plant specie and different collect events can have the same plant specie.
 
-    Information from all columns are mandatories.
+    No columns can be empty
 
 
 
-| id | kingdom | phylum        | class        |order     |family    |genus     |species                  |
+| id | kingdom | phylum        | class        |order_plant     |family    |genus     |species                  |
 | -- |--------:|-------------: |-------------:|---------:|---------:|---------:|------------------------:|
 | 1  | Plantae | Tracheophytes |Magnoliopsida |Asterales |Asteraceae|Baccharis |Baccharis dracunculifolia|
 
 ### <b>4. LOCATION table</b>
 
-    Location will be worked on such as an object. Each collect event must to be a location and different collect events can have the same location.
+    Location will be worked on such as an object. Each sample must to have a location and different samples can have the same location.
 
-    Information from all columns are mandatories.
+    No columns can be empty
 
 | id | user_id | country | locality      | municipality |latitude_s|longitude_w|
 | -- |--------:|--------:|-------------: |-------------:|---------:|----------:|
@@ -106,9 +106,9 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
 ### <b>5. SAMPLE table</b>
 
-In collect_event table we do the link with all tables we have through id_specie (SPECIES table), id_local (LOCATION table), id_project (PROJECT table) and id_subproject (SUBPROJECT table).
+In collect_event table we do the link with all tables we have through species_id (SPECIES table), location_id (LOCATION table), project_id (PROJECT table) and subproject_id (SUBPROJECT table).
 
-| id | user_id |specie_id |location_id |project_id|subproject_id|collection_id|field_id|collector_name|taxonomist_name|data_colect|extra_informmation|image|
+| id | user_id |species_id |location_id |project_id|subproject_id|collection_id|field_id|collector_name|taxonomist_name|data_colect|extra_informmation|image|
 | -- |--:|--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
 | 1  | 1 | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
 
