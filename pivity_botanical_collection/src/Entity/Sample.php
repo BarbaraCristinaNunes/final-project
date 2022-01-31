@@ -14,7 +14,7 @@ class Sample
     private $id;
 
     #[ORM\Column(type: 'integer')]
-    private $user_id;
+    private $institution_id;
 
     #[ORM\Column(type: 'integer')]
     private $species_id;
@@ -54,14 +54,14 @@ class Sample
         return $this->id;
     }
 
-    public function getUserId(): ?int
+    public function getInstituitionId(): ?int
     {
-        return $this->user_id;
+        return $this->institution_id;
     }
 
-    public function setUserId(int $user_id): self
+    public function setInstituitionId(int $institution_id): self
     {
-        $this->user_id = $user_id;
+        $this->institution_id = $institution_id;
 
         return $this;
     }
