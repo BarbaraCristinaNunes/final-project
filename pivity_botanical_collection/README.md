@@ -77,3 +77,8 @@ You can find database structure [here](https://github.com/BarbaraCristinaNunes/f
 In columns order_plant from table species I tried to user the word <b>order</b>, but I had the following error:
 
         [ERROR] Name "order" is a reserved word
+
+
+* 31/01/2022
+
+I changed my database structure and created an institution table. Now samples are associated with institutions and not with users.
