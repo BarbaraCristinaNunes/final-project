@@ -82,3 +82,11 @@ In columns order_plant from table species I tried to user the word <b>order</b>,
 * 31/01/2022
 
 I changed my database structure and created an institution table. Now samples are associated with institutions and not with users.
+
+## Constrollers
+
+Run the following code to create controllers:
+
+        php bin/console make:controller
+### Registration
+
