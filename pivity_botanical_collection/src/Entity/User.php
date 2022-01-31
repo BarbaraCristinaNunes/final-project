@@ -13,8 +13,8 @@ class User
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $instituition;
+    #[ORM\Column(type: 'integer')]
+    private $institution_id;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $laboratory;
@@ -39,12 +39,12 @@ class User
         return $this->id;
     }
 
-    public function getInstituition(): ?string
+    public function getInstituitionId(): ?string
     {
         return $this->instituition;
     }
 
-    public function setInstituition(string $instituition): self
+    public function setInstituitionId(string $institution_id): self
     {
         $this->instituition = $instituition;
 
