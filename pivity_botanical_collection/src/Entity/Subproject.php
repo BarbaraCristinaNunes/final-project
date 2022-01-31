@@ -19,6 +19,9 @@ class Subproject
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
+    #[ORM\Column(type: 'integer')]
+    private $institution_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class Subproject
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getInstituitionId(): ?int
+    {
+        return $this->institution_id;
+    }
+
+    public function setInstituitionId(int $institution_id): self
+    {
+        $this->institution_id = $institution_id;
 
         return $this;
     }
