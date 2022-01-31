@@ -22,6 +22,9 @@ class Project
     #[ORM\Column(type: 'string', length: 255)]
     private $funding_institution;
 
+    #[ORM\Column(type: 'integer')]
+    private $institution_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -59,6 +62,18 @@ class Project
     public function setFundingInstitution(string $funding_institution): self
     {
         $this->funding_institution = $funding_institution;
+
+        return $this;
+    }
+
+    public function getInstituitionId(): ?int
+    {
+        return $this->institution_id;
+    }
+
+    public function setInstituitionId(int $institution_id): self
+    {
+        $this->institution_id = $institution_id;
 
         return $this;
     }
