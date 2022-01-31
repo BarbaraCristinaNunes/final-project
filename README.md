@@ -55,6 +55,7 @@ There will be three tables in database.
 * LOCATION;
 * SAMPLE;
 * USER;
+* INSTITUTION;
 
 ### <b>1. PROJECT table</b>
 
@@ -66,9 +67,9 @@ There are a lot of projects in laboratories and it is very interesting to relate
     No columns can be empty.
 
 
-| id        | name          | coordinator  | funding institution |
-| --------- |:-------------:| ------------:| -------------------:|
-|      1    | Biodversity   | BN           | IUCN                |
+| id        | name          | coordinator  | funding institution |institution_id|
+| --------- |:-------------:| ------------:| -------------------:| ------------:|
+|      1    | Biodversity   | BN           | IUCN                |              |
 
 ### <b>2. SUBPROJECT table</b>
 
@@ -80,9 +81,9 @@ The projects are usually divided in subprojects. Each subproject deals with spec
     No columns can be empty
 
 
-| id        | project_id|name                      |
-| --------- | --------- |:------------------------:|
-|      1    |       1   |Invasive species          |
+| id        | project_id|name                      |institution_id|
+| --------- | --------- |:------------------------:| ------------:|
+|      1    |       1   |Invasive species          |              |
 
 ### <b>3. SPECIES table</b>
 
@@ -104,18 +105,18 @@ The projects are usually divided in subprojects. Each subproject deals with spec
 
     No columns can be empty
 
-| id | user_id | country | locality      | municipality |latitude_s|longitude_w|
-| -- |--------:|--------:|-------------: |-------------:|---------:|----------:|
-| 1  | 1       | brazil  | minas gerais  |serra do cipo |-19.28    |-43.60     |
+| id | institution_id  | country | locality      | municipality |latitude_s|longitude_w|
+| -- |----------------:|--------:|-------------: |-------------:|---------:|----------:|
+| 1  | 1               | brazil  | minas gerais  |serra do cipo |-19.28    |-43.60     |
 
 Columns latitude_s and longitude_w are type decimal, precision 10 and scale 0.
 ### <b>5. SAMPLE table</b>
 
 In collect_event table we do the link with all tables we have through species_id (SPECIES table), location_id (LOCATION table), project_id (PROJECT table) and subproject_id (SUBPROJECT table).
 
-| id | user_id |species_id |location_id |project_id|subproject_id|collection_id|field_id|collector_name|taxonomist_name|data_colect|extra_informmation|image|
-| -- |--:|--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
-| 1  | 1 | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
+| id | institution_id |species_id |location_id |project_id|subproject_id|collection_id|field_id|collector_name|taxonomist_name|data_colect|extra_informmation|image|
+| -- |--------------:|--:|---: |---:|--:|--:|--:|--:|--:|--:|--:|--:|
+| 1  | 1             | 1 | 1 |1 |null |null|567 |ana|bob|2020-01-01|t4-p6|.img/.pdf/.jpg|
 
 #### <b>Columns description</b>
 
@@ -143,9 +144,17 @@ In collect_event table we do the link with all tables we have through species_id
 
 ### <b>6. USER</b>
 
-| id | instituition                        | laboratory      | username     |email     |password   |adm        |online |
-| -- |------------------------------------:|---------------: |-------------:|---------:|----------:|----------:|------:|
-| 1  | Federal University of Minas Gerais  | LAB             |Ana           |a@a.a     |******     |boolean    |boolean|
+| id | institution_id | username     |email     |password   |adm        |
+| -- |---------------:|------------: |---------:|----------:|----------:|
+| 1  | 1              |Ana           |a@a.a     |******     |boolean    |
+
+<b>No columns can be empty.</b>
+
+### <b>6. INSTITUTION</b>
+
+| id | name                               | laboratory     |
+| -- |-----------------------------------:|--------------: |
+| 1  | Federal University of Minas Gerais |Ecology         |
 
 <b>No columns can be empty.</b>
 
