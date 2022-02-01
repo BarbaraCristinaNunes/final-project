@@ -19,6 +19,13 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
+    public static function createUser(ManagerRegistry $registry, User $user)
+    {
+        $entityManager = $registry->getManager();
+        $entityManager->persist($user);
+        $entityManager->flush();
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */
