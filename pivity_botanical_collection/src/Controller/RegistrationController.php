@@ -36,21 +36,24 @@ class RegistrationController extends AbstractController
         $password = $request->request->get('password');
         $confirm = $request->request->get('confirm');
 
+        // Get university from database with the name that user gives 
         $checkInstitutionDatabase = InstitutionRepository::findInstitutionByName($doctrine, $institutionName);
 
-        $checkLaboratoryDatabase = InstitutionRepository::findInstitutionByLaboratory($doctrine, $laboratory);
+        $laboratoriesArray = [];
 
-        if($checkInstitutionDatabase == $institutionName && $checkLaboratoryDatabase == $laboratory){
+        if($checkInstitutionDatabase){            
 
-            $this->message = "This laboratory is already registered!";
+            foreach ($checkInstitutionDatabase as $db){
 
-            return $this->render('registration/index.html.twig', [
-                'controller_name' => 'RegistrationController',
-                'message' => $this->message,
-            ]);
+                array_push($laboratoriesArray, $db->getLaboratory());
 
-        }else{
-            // create a new institution
+            }          
+
+        }
+
+        if(!in_array($laboratory, $laboratoriesArray) || $checkInstitutionDatabase == false ){
+
+            // Create a new institution
             $institution = new Institution($institutionName, $laboratory);
 
             // save new institution in database
@@ -59,8 +62,17 @@ class RegistrationController extends AbstractController
             $institution_id = $institution->getId();
 
             return $this->userAdmRegistration($doctrine, $username, $email, $password, $institution_id);
-        }
 
+        }else{
+            
+            $this->message = "This laboratory is already registered!";
+
+            return $this->render('registration/index.html.twig', [
+                'controller_name' => 'RegistrationController',
+                'message' => $this->message,
+            ]);
+        }
+        
     }
 
     public function userAdmRegistration($doctrine, $username, $email, $password, $institution_id): Response
