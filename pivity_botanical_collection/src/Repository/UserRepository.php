@@ -19,6 +19,7 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($doctrine, User::class);
     }
 
+    // Create a new user in databse
     public static function createUser($doctrine, User $user)
     {
         $entityManager = $doctrine->getManager();
