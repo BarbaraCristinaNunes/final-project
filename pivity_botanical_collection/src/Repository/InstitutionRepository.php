@@ -19,6 +19,7 @@ class InstitutionRepository extends ServiceEntityRepository
         parent::__construct($doctrine, Institution::class);
     }
 
+    // Create new institution in database
     public static  function createInstitution($doctrine, Institution $institution)
     {
         $entityManager = $doctrine->getManager();
@@ -26,6 +27,7 @@ class InstitutionRepository extends ServiceEntityRepository
         $entityManager->flush();
     }
 
+    // Find an institution by name in database
     public static function findInstitutionByName($doctrine, $institution)
     {
         $db = $doctrine->getRepository(Institution::class)->findOneBy(array('name' => $institution));
@@ -42,7 +44,8 @@ class InstitutionRepository extends ServiceEntityRepository
         }
     }
 
-    public static function findLaboratoryByName($doctrine, $laboratory)
+    // Find an institution by laboratory
+    public static function findInstitutionByLaboratory($doctrine, $laboratory)
     {
         $db = $doctrine->getRepository(Institution::class)->findOneBy(array('laboratory' => $laboratory));
 
