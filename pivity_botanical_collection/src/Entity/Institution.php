@@ -19,6 +19,12 @@ class Institution
     #[ORM\Column(type: 'string', length: 255)]
     private $laboratory;
 
+    public function __construct(string $name, string $laboratory)
+    {
+        $this->name = $name;
+        $this->laboratory = $laboratory;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
