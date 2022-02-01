@@ -17,6 +17,7 @@ When I created Constants.php it was not a class. So I was having problem to run 
 
 To resolve this I trasnformed Constants.php in a class and my arrays in public variables.
 
+-------------
 ## To run this project 
 
 ### Installing Doctrine
@@ -68,7 +69,7 @@ Then
 
 [Reference](https://symfony.com/doc/current/doctrine.html)
 
-## <b>Notes</b>
+<b>Notes</b>
 
 * 21/01/2022
 
@@ -83,12 +84,13 @@ In columns order_plant from table species I tried to user the word <b>order</b>,
 
 I changed my database structure and created an institution table. Now samples are associated with institutions and not with users.
 
+--------------
 ## Constrollers
 
 Run the following code to create controllers:
 
         php bin/console make:controller
-### Registration
+### 1- Registration
 
 * 31/01/2022
 
@@ -101,3 +103,18 @@ I can create a new institution using method called institutionRegistration() and
 <b>NOTE: </b>I am think in refactor institutionRegistration() and create a validation() method
 
 Form validation is not done yet.
+
+------------------
+### 2 - Login
+
+* 01/02/2022
+
+I created a form and thought how I will do the querry in UserRepository.php
+
+-------------
+
+### 2 - Homepage
+
+* 01/02/2002
+
+I started to thing how and what I have to show to the user after the login.
