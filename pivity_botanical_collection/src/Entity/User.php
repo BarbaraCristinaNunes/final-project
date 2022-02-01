@@ -13,12 +13,6 @@ class User
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\Column(type: 'integer')]
-    private $institution_id;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $laboratory;
-
     #[ORM\Column(type: 'string', length: 255)]
     private $username;
 
@@ -33,34 +27,23 @@ class User
 
     #[ORM\Column(type: 'boolean')]
     private $online;
+    
+    #[ORM\Column(type: 'integer')]
+    private $institution_id;
+
+    public function __construct(string $username, string $email, string $password, bool $adm, bool $online, int $institution_id)
+    {
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
+        $this->adm = $adm;
+        $this->online = $online;
+        $this->institution_id = $institution_id;
+    }
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getInstituitionId(): ?string
-    {
-        return $this->instituition;
-    }
-
-    public function setInstituitionId(string $institution_id): self
-    {
-        $this->instituition = $instituition;
-
-        return $this;
-    }
-
-    public function getLaboratory(): ?string
-    {
-        return $this->laboratory;
-    }
-
-    public function setLaboratory(string $laboratory): self
-    {
-        $this->laboratory = $laboratory;
-
-        return $this;
     }
 
     public function getUsername(): ?string
@@ -119,6 +102,18 @@ class User
     public function setOnline(bool $online): self
     {
         $this->online = $online;
+
+        return $this;
+    }
+    
+    public function getInstituitionId(): ?string
+    {
+        return $this->instituition;
+    }
+
+    public function setInstituitionId(string $institution_id): self
+    {
+        $this->instituition = $instituition;
 
         return $this;
     }
