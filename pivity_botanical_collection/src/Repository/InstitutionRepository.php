@@ -30,24 +30,22 @@ class InstitutionRepository extends ServiceEntityRepository
     // Find an institution by name in database
     public static function findInstitutionByName($doctrine, $institution)
     {
-        $db = $doctrine->getRepository(Institution::class)->findOneBy(array('name' => $institution));
+        $db = $doctrine->getRepository(Institution::class)->findBy(array('name' => $institution));
 
         if(!$db){
 
-            // There is no insitution called $institution
             return false;
 
         }else{
 
-            // There is an insitution called $institution
-            return true;
+            return $db;
         }
     }
 
     // Find an institution by laboratory
     public static function findInstitutionByLaboratory($doctrine, $laboratory)
     {
-        $db = $doctrine->getRepository(Institution::class)->findOneBy(array('laboratory' => $laboratory));
+        $db = $doctrine->getRepository(Institution::class)->findBy(array('laboratory' => $laboratory));
 
         if(!$db){
 
@@ -57,7 +55,7 @@ class InstitutionRepository extends ServiceEntityRepository
         }else{
 
             // There is an insitution called $institution
-            return true;
+            return $db;
         }
     }
     
