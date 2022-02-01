@@ -14,18 +14,50 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class InstitutionRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $doctrine)
     {
-        parent::__construct($registry, Institution::class);
+        parent::__construct($doctrine, Institution::class);
     }
 
-    public static  function createInstitution(ManagerRegistry $registry, Institution $institution)
+    public static  function createInstitution($doctrine, Institution $institution)
     {
-        $entityManager = $registry->getManager();
+        $entityManager = $doctrine->getManager();
         $entityManager->persist($institution);
         $entityManager->flush();
     }
 
+    public static function findInstitutionByName($doctrine, $institution)
+    {
+        $db = $doctrine->getRepository(Institution::class)->findOneBy(array('name' => $institution));
+
+        if(!$db){
+
+            // There is no insitution called $institution
+            return false;
+
+        }else{
+
+            // There is an insitution called $institution
+            return true;
+        }
+    }
+
+    public static function findLaboratoryByName($doctrine, $laboratory)
+    {
+        $db = $doctrine->getRepository(Institution::class)->findOneBy(array('laboratory' => $laboratory));
+
+        if(!$db){
+
+            // There is no insitution called $institution
+            return false;
+
+        }else{
+
+            // There is an insitution called $institution
+            return true;
+        }
+    }
+    
     // /**
     //  * @return Institution[] Returns an array of Institution objects
     //  */
