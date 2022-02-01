@@ -19,6 +19,13 @@ class InstitutionRepository extends ServiceEntityRepository
         parent::__construct($registry, Institution::class);
     }
 
+    public static  function createInstitution(ManagerRegistry $registry, Institution $institution)
+    {
+        $entityManager = $registry->getManager();
+        $entityManager->persist($institution);
+        $entityManager->flush();
+    }
+
     // /**
     //  * @return Institution[] Returns an array of Institution objects
     //  */
