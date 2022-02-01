@@ -90,3 +90,12 @@ Run the following code to create controllers:
         php bin/console make:controller
 ### Registration
 
+* 31/01/2022
+
+Created a simple form.
+
+* 01/02/2022
+
+I can create a new institution using method called institutionRegistration() and a new user using method called userAdmRegistration().
+
+Form validation is not done yet.
