@@ -38,9 +38,7 @@ class RegistrationController extends AbstractController
 
         $checkInstitutionDatabase = InstitutionRepository::findInstitutionByName($doctrine, $institutionName);
 
-        $checkLaboratoryDatabase = InstitutionRepository::findLaboratoryByName($doctrine, $laboratory);
-
-        var_dump($institutionName, $laboratory, $username, $email, $password, $confirm);
+        $checkLaboratoryDatabase = InstitutionRepository::findInstitutionByLaboratory($doctrine, $laboratory);
 
         if($checkInstitutionDatabase == $institutionName && $checkLaboratoryDatabase == $laboratory){
 
