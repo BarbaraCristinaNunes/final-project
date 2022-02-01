@@ -98,4 +98,6 @@ Created a simple form.
 
 I can create a new institution using method called institutionRegistration() and a new user using method called userAdmRegistration().
 
+<b>NOTE: </b>I am think in refactory institutionRegistration() and create a validation() method
+
 Form validation is not done yet.
