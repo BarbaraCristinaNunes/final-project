@@ -8,13 +8,23 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<form method="post" action="userLogin">
+    <div class="container">
+        <label>Institution</label>
+        <input type="text" name="institution"></br>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/barba/OneDrive/Documentos/GitHub/final-project/pivity_botanical_collection/src/Controller/LoginController.php'|file_link(0) }}">src/Controller/LoginController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/barba/OneDrive/Documentos/GitHub/final-project/pivity_botanical_collection/templates/login/index.html.twig'|file_link(0) }}">templates/login/index.html.twig</a></code></li>
-    </ul>
-</div>
+        <label>Laboratory</label>
+        <input type="text" name="laboratory"></br>
+
+        <label>Email</label>
+        <input type="text" name="email"></br>
+
+        <label>Password</label>
+        <input type="text" name="password"></br>
+
+        <input type="submit" name="submit">
+
+        {{message}}
+    </div>
+</form>
 {% endblock %}
