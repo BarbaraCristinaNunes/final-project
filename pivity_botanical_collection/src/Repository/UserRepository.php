@@ -14,14 +14,14 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class UserRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $doctrine)
     {
-        parent::__construct($registry, User::class);
+        parent::__construct($doctrine, User::class);
     }
 
-    public static function createUser(ManagerRegistry $registry, User $user)
+    public static function createUser($doctrine, User $user)
     {
-        $entityManager = $registry->getManager();
+        $entityManager = $doctrine->getManager();
         $entityManager->persist($user);
         $entityManager->flush();
     }
