@@ -36,17 +36,33 @@ class RegistrationController extends AbstractController
         $password = $request->request->get('password');
         $confirm = $request->request->get('confirm');
 
-        // create a new institution
-        $institution = new Institution($institutionName, $laboratory);
+        $checkInstitutionDatabase = InstitutionRepository::findInstitutionByName($doctrine, $institutionName);
 
-        // save new institution in database
-        InstitutionRepository::createInstitution($doctrine, $institution);
+        $checkLaboratoryDatabase = InstitutionRepository::findLaboratoryByName($doctrine, $laboratory);
 
-        $institution_id = $institution->getId();
+        var_dump($institutionName, $laboratory, $username, $email, $password, $confirm);
 
-        var_dump($institution, $laboratory, $username, $email, $password, $confirm);
+        if($checkInstitutionDatabase == $institutionName && $checkLaboratoryDatabase == $laboratory){
 
-        return $this->userAdmRegistration($doctrine, $username, $email, $password, $institution_id);
+            $this->message = "This laboratory is already registered!";
+
+            return $this->render('registration/index.html.twig', [
+                'controller_name' => 'RegistrationController',
+                'message' => $this->message,
+            ]);
+
+        }else{
+            // create a new institution
+            $institution = new Institution($institutionName, $laboratory);
+
+            // save new institution in database
+            InstitutionRepository::createInstitution($doctrine, $institution);
+
+            $institution_id = $institution->getId();
+
+            return $this->userAdmRegistration($doctrine, $username, $email, $password, $institution_id);
+        }
+
     }
 
     public function userAdmRegistration($doctrine, $username, $email, $password, $institution_id): Response
@@ -56,6 +72,8 @@ class RegistrationController extends AbstractController
 
         // save new user in database
         UserRepository::createUser($doctrine, $user);
+
+        $this->message = "Welcome to PBC!";
 
         return $this->render('registration/index.html.twig', [
             'controller_name' => 'RegistrationController',
