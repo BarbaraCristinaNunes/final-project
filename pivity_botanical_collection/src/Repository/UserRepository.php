@@ -27,6 +27,23 @@ class UserRepository extends ServiceEntityRepository
         $entityManager->flush();
     }
 
+    public static function findUserByEmail($doctrine, $email)
+    {
+        $db = $doctrine->getRepository(User::class)->findBy(array('email' => $email));
+
+        if(!$db){
+            return false;
+        }else{
+            return $db;
+        }
+    }
+
+    public static function changeOnlineStatus($doctrine, $user){
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($user);
+        $entityManager->flush();
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */
