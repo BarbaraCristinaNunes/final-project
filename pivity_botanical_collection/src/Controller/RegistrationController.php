@@ -51,7 +51,7 @@ class RegistrationController extends AbstractController
 
         }
 
-        if(!in_array($laboratory, $laboratoriesArray) || $checkInstitutionDatabase == false ){
+        if(!in_array($laboratory, $laboratoriesArray) || $checkInstitutionDatabase == false){
 
             // Create a new institution
             $institution = new Institution($institutionName, $laboratory);
@@ -77,17 +77,31 @@ class RegistrationController extends AbstractController
 
     public function userAdmRegistration($doctrine, $username, $email, $password, $institution_id): Response
     {   
-        // create a new user
-        $user = new User($username, $email, $password, 1, 0, $institution_id);
 
-        // save new user in database
-        UserRepository::createUser($doctrine, $user);
+        $checkUserDB = UserRepository::findUserByEmail($doctrine, $email);
 
-        $this->message = "Welcome to PBC!";
+        if(!$checkUserDB){
+
+            // create a new user
+            $user = new User($username, $email, $password, 1, 0, $institution_id);
+
+            // save new user in database
+            UserRepository::createUser($doctrine, $user);
+
+            $this->message = "Welcome to PBC!";
+
+            return $this->render('registration/index.html.twig', [
+                'controller_name' => 'RegistrationController',
+                'message' => $this->message,
+            ]);
+        }
+
+        $this->message = "This email is already registered in PBC!";
 
         return $this->render('registration/index.html.twig', [
             'controller_name' => 'RegistrationController',
             'message' => $this->message,
         ]);
+        
     }
 }
