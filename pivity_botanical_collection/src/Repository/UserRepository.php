@@ -40,7 +40,7 @@ class UserRepository extends ServiceEntityRepository
 
     public static function changeOnlineStatus($doctrine, $user){
         $entityManager = $doctrine->getManager();
-        $entityManager->persist($user);
+        $user;
         $entityManager->flush();
     }
 
