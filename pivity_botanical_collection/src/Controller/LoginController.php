@@ -27,21 +27,49 @@ class LoginController extends AbstractController
     }
 
     #[Route('/userLogin', name: 'userLogin')]
-    public function loginValidation(Request $request): Response
+    public function loginValidation(Request $request, ManagerRegistry $doctrine): Response
     {
-        $institution = $request->request->get('institution');
-        $laboratory = $request->request->get('laboratory');
+
         $email = $request->request->get('email');
         $password = $request->request->get('password');
 
+        if($email && $password){
+
+            $userDb = UserRepository::findUserByEmail($doctrine, $email);
+
+            if($userDb && $userDb[0]->getPassword() == $password){
+
+                var_dump($userDb[0]->getPassword());
+
+                $userDb[0]->setOnline(1);
+
+                UserRepository::changeOnlineStatus($doctrine, $userDb);
+
+                return $this->render('login/index.html.twig', [
+                    'controller_name' => 'LoginController',
+                    'message' => $this->message,
+                ]);
+
+            }elseif($userDb && $userDb[0]->getPassword() !== $password){
+
+                $this->message = "Email or password is not correct!";
+
+                return $this->render('login/index.html.twig', [
+                'controller_name' => 'LoginController',
+                'message' => $this->message,
+                ]);
+                
+            }
+
+            $this->message = "You are not registered in PBC!";
+
+            return $this->render('login/index.html.twig', [
+                'controller_name' => 'LoginController',
+                'message' => $this->message,
+            ]);
+
+        }
         
-
-        var_dump($institution, $laboratory, $email, $password);
-
-        return $this->render('login/index.html.twig', [
-            'controller_name' => 'LoginController',
-            'message' => $this->message,
-        ]);
     }
 
 }
