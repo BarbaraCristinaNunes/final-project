@@ -117,4 +117,4 @@ I created a form and thought how I will do the querry in UserRepository.php
 
 * 01/02/2002
 
-I started to thing how and what I have to show to the user after the login.
+I started to thing how and what I have to show to the user after login.
