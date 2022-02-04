@@ -8,19 +8,18 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-2" style="border: solid black;">
-                <h2>Welcome!</h2>
-                <a href="{{ path('projects') }}">Projects</a>
-                <a>Subprojects</a>
-                <a>Colection</a>
-                <a>Colaborators</a>
-                <a>Settings</a>
+                {% block content %}
+                    {% include ('userSpaceLinks.html.twig') %}
+                {% endblock %}
             </div>
             <div class="col-10" style="border: solid black;">
             <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
             </div>
         </div>        
     </div>
+
+
 {% endblock %}
