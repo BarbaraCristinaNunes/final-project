@@ -111,10 +111,20 @@ Form validation is not done yet.
 
 I created a form and thought how I will do the querry in UserRepository.php
 
+* 03/02/2022
+
+Now user can login. I didn't do validation
+
 -------------
 
-### 2 - Homepage
+### 3 - Homepage
 
 * 01/02/2002
 
 I started to thing how and what I have to show to the user after login.
+
+### 4 - User Space
+
+* 03/02/2002
+
+The user is redirected to user space after login.
