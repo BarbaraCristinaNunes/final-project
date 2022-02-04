@@ -45,9 +45,8 @@ class LoginController extends AbstractController
 
                 UserRepository::changeOnlineStatus($doctrine, $userDb);
 
-                return $this->render('login/index.html.twig', [
-                    'controller_name' => 'LoginController',
-                    'message' => $this->message,
+                return $this->render('user_space/index.html.twig', [
+                    'controller_name' => 'UserSpaceController',
                 ]);
 
             }elseif($userDb && $userDb[0]->getPassword() !== $password){
