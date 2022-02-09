@@ -13,11 +13,29 @@ use App\Repository\ProjectRepository;
 class ProjectsController extends AbstractController
 {
     private string $message = "";
+    public array $projectObjects = [];
+
     #[Route('/projects', name: 'projects')]
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine): Response
     {
+        $projects = ProjectRepository::readAllProjects($doctrine);
+
+        if($projects){
+            var_dump($projects[0]->getName());
+            $this->projectObjects = $projects;
+
+            return $this->render('projects/index.html.twig', [
+                'controller_name' => 'ProjectsController',
+                'message' => $this->message,
+                'projects' => $this->projectObjects,
+            ]);
+        }
+
+        $this->message = "You have no projects yet!";
+
         return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
+            'message' => $this->message = "You have no projects yet!",
         ]);
     }
 
@@ -36,6 +54,7 @@ class ProjectsController extends AbstractController
 
         return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
+            'projects' => $this->projectObjects,
         ]);
     }
 }
