@@ -27,13 +27,14 @@
                 </button>
 
                 <div>
+                {% if projects %}
                     <table>
                         <tr>
                             <th>Project name</th>
                             <th>Coordinator</th>
                             <th>Funding Institution</th>
                             <th></th>
-                        </tr>
+                        </tr>                        
                         {% for project in projects%}
                             <tr>
                                 <td>{{project.name}}<td>
@@ -43,6 +44,8 @@
                             </tr>
                         {% endfor %}
                     </table>
+                    {% endif %}
+                    {{message}}
                 </div>
             </div>
         </div>               
