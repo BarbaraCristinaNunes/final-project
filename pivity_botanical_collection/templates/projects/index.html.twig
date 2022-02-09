@@ -25,6 +25,25 @@
                 >
                     Add Project
                 </button>
+
+                <div>
+                    <table>
+                        <tr>
+                            <th>Project name</th>
+                            <th>Coordinator</th>
+                            <th>Funding Institution</th>
+                            <th></th>
+                        </tr>
+                        {% for project in projects%}
+                            <tr>
+                                <td>{{project.name}}<td>
+                                <td>{{project.coordinator}}</td>
+                                <td>{{project.fundingInstitution}}</td>
+                                <td><button type="submit" name="update">Update</button></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
             </div>
         </div>               
     </div>
