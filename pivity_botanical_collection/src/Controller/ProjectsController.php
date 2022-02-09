@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Project;
 use App\Repository\ProjectRepository;
@@ -13,7 +14,7 @@ use App\Repository\ProjectRepository;
 class ProjectsController extends AbstractController
 {
     private string $message = "";
-    public array $projectObjects = [];
+    private array $projectObjects = [];
 
     #[Route('/projects', name: 'projects')]
     public function index(ManagerRegistry $doctrine): Response
@@ -36,11 +37,12 @@ class ProjectsController extends AbstractController
         return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
             'message' => $this->message = "You have no projects yet!",
+           'projects' => $this->projectObjects,
         ]);
     }
 
     #[Route('/createProject', name: 'createProject')]
-    public function createProject(Request $request, ManagerRegistry $doctrine): Response
+    public function createProject(Request $request, ManagerRegistry $doctrine): RedirectResponse
     {
         $name = $request->request->get('projectName');
         $coordinator = $request->request->get('coordinator');
@@ -52,9 +54,6 @@ class ProjectsController extends AbstractController
 
         ProjectRepository::createProject($doctrine, $project);
 
-        return $this->render('projects/index.html.twig', [
-            'controller_name' => 'ProjectsController',
-            'projects' => $this->projectObjects,
-        ]);
+        return $this->redirectToRoute('projects');
     }
 }
