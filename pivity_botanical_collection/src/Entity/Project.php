@@ -25,6 +25,14 @@ class Project
     #[ORM\Column(type: 'integer')]
     private $institution_id;
 
+    public function __construct(string $name, string $coordinator, string $funding_institution, int $institution_id)
+    {
+        $this->name = $name;
+        $this->coordinator = $coordinator;
+        $this->funding_institution = $funding_institution;
+        $this->institution_id = $institution_id;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
