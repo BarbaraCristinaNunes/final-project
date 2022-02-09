@@ -26,6 +26,16 @@ class ProjectRepository extends ServiceEntityRepository
         $entityManager->flush();
     }
 
+    public static function readAllProjects($doctrine)
+    {
+        $db = $doctrine->getRepository(Project::class)->findAll();
+
+        if(!$db){
+            return false;
+        }else{
+            return $db;
+        }
+    }
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */
