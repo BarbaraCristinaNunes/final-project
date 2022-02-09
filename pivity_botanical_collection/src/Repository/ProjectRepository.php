@@ -19,6 +19,13 @@ class ProjectRepository extends ServiceEntityRepository
         parent::__construct($registry, Project::class);
     }
 
+    public static function createProject($doctrine, Project $project)
+    {
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($project);
+        $entityManager->flush();
+    }
+
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */
