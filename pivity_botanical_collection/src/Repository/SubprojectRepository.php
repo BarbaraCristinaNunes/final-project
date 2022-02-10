@@ -19,6 +19,24 @@ class SubprojectRepository extends ServiceEntityRepository
         parent::__construct($registry, Subproject::class);
     }
 
+    public static function createSubroject($doctrine, Subproject $subproject)
+    {
+        $entityManager = $doctrine->getManager();
+        $entityManager->persist($subproject);
+        $entityManager->flush();
+    }
+
+    public static function readAllSubprojects($doctrine)
+    {
+        $db = $doctrine->getRepository(Subproject::class)->findAll();
+
+        if(!$db){
+            return false;
+        }else{
+            return $db;
+        }
+    }
+
     // /**
     //  * @return Subproject[] Returns an array of Subproject objects
     //  */
