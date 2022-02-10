@@ -104,7 +104,6 @@ I can create a new institution using method called institutionRegistration() and
 
 Form validation is not done yet.
 
-------------------
 ### 2 - Login
 
 * 01/02/2022
@@ -119,22 +118,18 @@ Now user can login. I didn't do validation
 
 Now user is redirected to userspace when he/she does login
 
--------------
-
 ### 3 - Homepage
 
 * 01/02/2002
 
 I started to thing how and what I have to show to the user after login.
 
---------------
 ### 4 - User Space
 
 * 03/02/2002
 
 The user is redirected to user space after login.
 
---------
 ### 5 - Projects
 
 * 09/02/2022
@@ -175,7 +170,7 @@ I can find a subproject by name and institution id
 * 04/02/2022
 I keep links that redirect user to pages called project, subproject, collection, collaborators and setting. They are able only for who does login
 
-### Projects
+### projects
 
 * 09/02/2022
 
@@ -184,8 +179,7 @@ I created a table where I show the projects
 
 * 10/02/2022
 
--------------------
-### Subprojects
+### subprojects
 
 * 10/02/2022
 
