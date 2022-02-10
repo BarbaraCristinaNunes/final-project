@@ -32,8 +32,6 @@ class ProjectsController extends AbstractController
             ]);
         }
 
-        $this->message = "You have no projects yet!";
-
         return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
             'message' => $this->message = "You have no projects yet!",
