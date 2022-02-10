@@ -54,9 +54,28 @@ class SubprojectsController extends AbstractController
     {
         $subprojectName = $request->request->get('subprojectName');
         $projectId = $request->request->get('project');
-
+        
         var_dump($subprojectName, $projectId);
 
-        return $this->redirectToRoute('subprojects'); 
+        $subprojects = SubprojectRepository::findSubprojectByName($doctrine, $subprojectName);
+        $projectsId = []; 
+
+        if($subprojects){
+            foreach($subprojects as $subproject){
+                array_push($projectsId, $subproject->getProjectId());
+            }
+        }
+        var_dump($projectsId);
+
+        if(!in_array($projectId, $projectsId)){
+
+            $subproject = new Subproject($projectId, $subprojectName, 1);
+            SubprojectRepository::createSubroject($doctrine, $subproject);
+
+            return $this->redirectToRoute('subprojects');
+        }
+
+        return $this->redirectToRoute('subprojects');
+         
     }
 }
