@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectsController!{% endblock %}
+{% block title %}Hello SubrojectsController!{% endblock %}
 
 {% block body %}
 <style>
@@ -25,9 +25,23 @@
                 >
                     Add Subproject
                 </button>
-
                 <div>
-                
+                    {% if subprojects %}
+                    <table>
+                        <tr>
+                            <th>Project</th>
+                            <th>Subproject</th>
+                            <th></th>
+                        </tr>                        
+                        {% for subproject in subprojects%}
+                            <tr>
+                                <td>{{subproject.name}}<td>
+                                <td>{{subproject.projectId}}</td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+                    {{message}}
                 </div>
             </div>
         </div>               
@@ -40,17 +54,25 @@
             <h5 class="modal-title" id="exampleModalLabel">Create a new subproject</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="post" action="createProject">
+        <form method="post" action="createSubproject">
             <div class="modal-body">
-            
-                <label>Project Name</label>
-                <input type="text" name="projectName" class="form-control"></br>
 
-                <label>Coordinator</label>
-                <input type="text" name="coordinator" class="form-control"></br>
+                <div class="dropdown">
+                {% if projects %}
 
-                <label>Funding Istitution</label>
-                <input type="text" name="funding" class="form-control"></br>
+                    <label>Select a project</label>
+                    <select name="project" class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% for project in projects%}
+                            <option value="{{project.id}}">{{project.name}}</option>
+                        {% endfor %}
+                    </select>
+
+                {% endif %}                
+                </div>
+
+                <label>Subproject Name</label>
+                <input type="text" name="subprojectName" class="form-control"></br>
+
             </div>
             <div class="modal-footer">
                 <input type="submit" name="submitProject">
