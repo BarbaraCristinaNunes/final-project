@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProjectsController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2" style="border: solid black;">
+                {% block content %}
+                    {% include ('userSpaceLinks.html.twig') %}
+                {% endblock %}
+            </div>
+            <div class="col-10" style="border: solid black;">
+                <button 
+                    type="button" 
+                    name="addProject" 
+                    class="btn btn-primary" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#exampleModal"
+                >
+                    Add Subproject
+                </button>
+
+                <div>
+                
+                </div>
+            </div>
+        </div>               
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create a new subproject</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form method="post" action="createProject">
+            <div class="modal-body">
+            
+                <label>Project Name</label>
+                <input type="text" name="projectName" class="form-control"></br>
+
+                <label>Coordinator</label>
+                <input type="text" name="coordinator" class="form-control"></br>
+
+                <label>Funding Istitution</label>
+                <input type="text" name="funding" class="form-control"></br>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" name="submitProject">
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+            
+{% endblock %}
