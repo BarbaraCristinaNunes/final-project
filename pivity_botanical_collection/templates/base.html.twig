@@ -17,6 +17,34 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <footer>
+            <nav class="navbar navbar-light bg-light">
+                    <div class="container">
+                        <a class="navbar-brand" href="#">
+                            <img src="" alt="" width="30" height="24">
+                        </a>
+                        <a class="navbar-brand" href="#">
+                            Homepage
+                        </a>
+                        <a class="navbar-brand" href="#">
+                            About PBC
+                        </a>
+                        <a class="navbar-brand" href="{{ path('login') }}">
+                            Login
+                        </a>
+                        <a class="navbar-brand" href="{{ path('registration') }}">
+                            Registration
+                        </a>
+                        <a class="navbar-brand" href="#">
+                            Logout
+                        </a>
+                        <a class="navbar-brand" href="#">
+                            User Space
+                        </a>
+                    </div>
+                </nav>  
+        </footer>
+        {% block body %}      
+        {% endblock %}
     </body>
 </html>
