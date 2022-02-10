@@ -149,9 +149,7 @@ I can find project by id
 
         findProjectById()
 
---------------
-
-### Subprojects
+### 6 - Subprojects
 
 User can create a subproject
 I can show all subprojects
@@ -162,15 +160,17 @@ I can find a subproject by name and institution id
         readAllSubprojects()
         findSubprojectByName()
         findProjectByInstitutionId()
+
+
 ----------
 ## Templates
 
-### userSpaceLinks 
+### 1 - userSpaceLinks 
 
 * 04/02/2022
 I keep links that redirect user to pages called project, subproject, collection, collaborators and setting. They are able only for who does login
 
-### projects
+### 2 - projects
 
 * 09/02/2022
 
@@ -179,7 +179,7 @@ I created a table where I show the projects
 
 * 10/02/2022
 
-### subprojects
+### 3 - subprojects
 
 * 10/02/2022
 
