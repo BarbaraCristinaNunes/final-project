@@ -37,12 +37,12 @@ class ProjectsController extends AbstractController
         return $this->render('projects/index.html.twig', [
             'controller_name' => 'ProjectsController',
             'message' => $this->message = "You have no projects yet!",
-           'projects' => $this->projectObjects,
+            'projects' => $this->projectObjects,
         ]);
     }
 
     #[Route('/createProject', name: 'createProject')]
-    public function createProject(Request $request, ManagerRegistry $doctrine): RedirectResponse
+    public function projectValidation(Request $request, ManagerRegistry $doctrine): RedirectResponse
     {
         $name = $request->request->get('projectName');
         $coordinator = $request->request->get('coordinator');
@@ -52,8 +52,34 @@ class ProjectsController extends AbstractController
 
         $project = new Project($name, $coordinator, $fundingInstitution, 1);
 
-        ProjectRepository::createProject($doctrine, $project);
+        $projectsDb = ProjectRepository::findProjectByName($doctrine, $name);
+
+        $projectsName = [];
+
+        if($projectsDb){
+
+            foreach($projectsDb as $projectDb){
+
+                array_push($projectsName, $projectDb->getName());
+
+            }
+        }
+        var_dump($projectsName);
+
+        if(!in_array($name, $projectsName)){
+            
+            $this->createProject($doctrine, $project);
+                      
+        }
+
+        // $this->message = '<script>alert("There is this project already!")</script>';
 
         return $this->redirectToRoute('projects');
+    }
+
+    public function createProject($doctrine, $project): RedirectResponse
+    {
+        ProjectRepository::createProject($doctrine, $project);
+        return $this->redirectToRoute('projects');  
     }
 }
