@@ -151,6 +151,8 @@ I can find project by id
 
 ### 6 - Subprojects
 
+* 10/02/2022
+
 User can create a subproject
 I can show all subprojects
 I can find a subproject by name and institution id
