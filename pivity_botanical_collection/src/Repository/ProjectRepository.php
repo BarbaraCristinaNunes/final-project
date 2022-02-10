@@ -36,6 +36,7 @@ class ProjectRepository extends ServiceEntityRepository
             return $db;
         }
     }
+
     public static function findProjectByInstitutionId($doctrine, $institutionId)
     {
         $db = $doctrine->getRepository(Project::class)->findBy(array('institution_id' => $institutionId));
@@ -49,6 +50,7 @@ class ProjectRepository extends ServiceEntityRepository
             return $db;
         }
     }
+    
     public static function findProjectByName($doctrine, $name)
     {
         $db = $doctrine->getRepository(Project::class)->findBy(array('name' => $name));
