@@ -21,7 +21,7 @@ class SubprojectsController extends AbstractController
     #[Route('/subprojects', name: 'subprojects')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $subprojects = SubprojectRepository::readAllSubprojects($doctrine);
+        $subprojects = SubprojectRepository::findSubrojectByInstitutionId($doctrine, 1);
         $projects = ProjectRepository::readAllProjects($doctrine);
 
         if($projects){
