@@ -115,7 +115,7 @@ I created a form and thought how I will do the querry in UserRepository.php
 
 Now user can login. I didn't do validation
 
-*04/02/2002
+* 04/02/2002
 
 Now user is redirected to userspace when he/she does login
 
@@ -184,7 +184,7 @@ I created a table where I show the projects
 
 * 10/02/2022
 
-
+-------------------
 ### Subprojects
 
 * 10/02/2022
