@@ -37,6 +37,20 @@ class SubprojectRepository extends ServiceEntityRepository
         }
     }
 
+    public static function findSubprojectByName($doctrine, $subproject)
+    {
+        $db = $doctrine->getRepository(Subproject::class)->findBy(array('name' => $subproject));
+
+        if(!$db){
+
+            return false;
+
+        }else{
+
+            return $db;
+        }
+    }
+
     // /**
     //  * @return Subproject[] Returns an array of Subproject objects
     //  */
