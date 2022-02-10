@@ -115,6 +115,10 @@ I created a form and thought how I will do the querry in UserRepository.php
 
 Now user can login. I didn't do validation
 
+*04/02/2002
+
+Now user is redirected to userspace when he/she does login
+
 -------------
 
 ### 3 - Homepage
@@ -123,8 +127,68 @@ Now user can login. I didn't do validation
 
 I started to thing how and what I have to show to the user after login.
 
+--------------
 ### 4 - User Space
 
 * 03/02/2002
 
 The user is redirected to user space after login.
+
+--------
+### 5 - Projects
+
+* 09/02/2022
+
+User can create a new project
+I can show all projects that are in database on page
+
+* 10/02/2022
+
+I can get all project using name. Method from ProjectRepository.
+
+        public static function findProjectByName(){}
+
+I refactored createProject() in createProject() and projectValidation()
+
+I can find project by id 
+
+        findProjectById()
+
+--------------
+
+### Subprojects
+
+User can create a subproject
+I can show all subprojects
+I can find a subproject by name and institution id
+
+        functions from SubprojectRepository:
+        createSubroject()
+        readAllSubprojects()
+        findSubprojectByName()
+        findProjectByInstitutionId()
+----------
+## Templates
+
+### userSpaceLinks 
+
+* 04/02/2022
+I keep links that redirect user to pages called project, subproject, collection, collaborators and setting. They are able only for who does login
+
+### Projects
+
+* 09/02/2022
+
+I created a model where there is a form and the user can create a project in database
+I created a table where I show the projects
+
+* 10/02/2022
+
+
+### Subprojects
+
+* 10/02/2022
+
+I created a model where there is a form and the user can create a subproject in database
+I created a table where I show the subprojects
+User can choose a project to associate it with subproject using a dropdow.
