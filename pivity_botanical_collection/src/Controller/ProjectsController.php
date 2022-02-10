@@ -19,7 +19,7 @@ class ProjectsController extends AbstractController
     #[Route('/projects', name: 'projects')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $projects = ProjectRepository::readAllProjects($doctrine);
+        $projects = ProjectRepository::findProjectByInstitutionId($doctrine,1);
 
         if($projects){
             var_dump($projects[0]->getName());
