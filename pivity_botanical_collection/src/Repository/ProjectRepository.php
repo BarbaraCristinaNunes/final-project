@@ -64,6 +64,20 @@ class ProjectRepository extends ServiceEntityRepository
             return $db;
         }
     }
+
+    public static function findProjectById($doctrine, $id)
+    {
+        $db = $doctrine->getRepository(Project::class)->findBy(array('name' => $id));
+
+        if(!$db){
+
+            return false;
+
+        }else{
+
+            return $db;
+        }
+    }
     // /**
     //  * @return Project[] Returns an array of Project objects
     //  */
